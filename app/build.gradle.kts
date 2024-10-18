@@ -22,7 +22,8 @@ android {
         buildConfigField(
             "String",
             "BASE_URL",
-            "\"https://rickandmortyapi.com/api/\"")
+            "\"https://rickandmortyapi.com/api/\""
+        )
     }
 
     buildTypes {
@@ -42,7 +43,7 @@ android {
         jvmTarget = "1.8"
     }
 
-    buildFeatures{
+    buildFeatures {
         viewBinding = true
         buildConfig = true
     }
@@ -77,13 +78,14 @@ dependencies {
 
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
 
-    implementation ("com.github.skydoves:expandablelayout:1.0.7")
+    implementation("com.github.skydoves:expandablelayout:1.0.7")
 
-    implementation ("io.coil-kt:coil:2.7.0")
+    implementation("io.coil-kt:coil:2.7.0")
 
     implementation("androidx.paging:paging-runtime-ktx:3.3.2")
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
 
     implementation(libs.koin.android)
+
 }

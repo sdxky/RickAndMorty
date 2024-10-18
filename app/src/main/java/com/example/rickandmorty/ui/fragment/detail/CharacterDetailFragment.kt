@@ -7,17 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.viewModels
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import androidx.navigation.fragment.navArgs
 import coil.load
 import com.example.rickandmorty.databinding.FragmentCharacterDetailBinding
 import com.example.rickandmorty.utils.Resource
-import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class CharacterDetailFragment : Fragment() {
     private lateinit var binding: FragmentCharacterDetailBinding
-    private val viewModel: CharacterDetailViewModel by viewModels()
+    private val viewModel: CharacterDetailViewModel by viewModel()
     private val args: CharacterDetailFragmentArgs by navArgs()
 
     override fun onCreateView(

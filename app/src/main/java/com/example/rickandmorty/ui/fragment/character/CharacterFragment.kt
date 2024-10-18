@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.rickandmorty.data.model.characters.Character
@@ -15,14 +14,13 @@ import com.example.rickandmorty.databinding.FragmentCharacterBinding
 import com.geeks.rickandmorty.ui.fragment.character.CharacterAdapter
 import com.geeks.rickandmorty.ui.fragment.character.OnClick
 import com.example.rickandmorty.utils.Resource
-import dagger.hilt.android.AndroidEntryPoint
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import kotlinx.coroutines.launch
 
-@AndroidEntryPoint
 class CharacterFragment : Fragment(), OnClick {
 
     private lateinit var binding: FragmentCharacterBinding
-    private val viewModel: CharacterViewModel by viewModels()
+    private val viewModel: CharacterViewModel by viewModel()
     private lateinit var charactersAdapter: CharacterAdapter
 
     override fun onCreateView(
