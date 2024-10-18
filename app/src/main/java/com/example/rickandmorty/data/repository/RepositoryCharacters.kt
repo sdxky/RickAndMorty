@@ -15,7 +15,7 @@ import com.example.rickandmorty.utils.Resource
 import kotlinx.coroutines.Dispatchers
 import javax.inject.Inject
 
-class Repository @Inject constructor(private val api: ApiService) {
+class Repository (private val api: ApiService) {
 
     fun getCharacters(): LiveData<Resource<PagingData<Character>>> {
         return liveData {
