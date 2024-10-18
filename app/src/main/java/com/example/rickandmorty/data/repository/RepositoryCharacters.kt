@@ -13,9 +13,8 @@ import com.example.rickandmorty.data.model.detailCharacter.DetailModel
 import com.example.rickandmorty.data.paging.PagingSource
 import com.example.rickandmorty.utils.Resource
 import kotlinx.coroutines.Dispatchers
-import javax.inject.Inject
 
-class Repository (private val api: ApiService) {
+class RepositoryCharacters (private val api: ApiService) {
 
     fun getCharacters(): LiveData<Resource<PagingData<Character>>> {
         return liveData {

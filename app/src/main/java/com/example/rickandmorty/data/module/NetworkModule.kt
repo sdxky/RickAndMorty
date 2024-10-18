@@ -1,16 +1,13 @@
-package com.example.rickandmorty.data.di
+package com.example.rickandmorty.data.module
 
-import com.example.rickandmorty.data.repository.Repository
+import com.example.rickandmorty.data.repository.RepositoryCharacters
 import com.example.rickandmorty.data.apiService.ApiService
-import dagger.Provides
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import org.koin.dsl.factory
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
-import javax.inject.Singleton
 
 const val BASE_URL = "https://rickandmortyapi.com/api/"
 
@@ -45,8 +42,8 @@ fun provideApiService(retrofit: Retrofit): ApiService {
     return retrofit.create(ApiService::class.java)
 }
 
-fun provideRepository(apiService: ApiService): Repository {
-    return Repository(apiService)
+fun provideRepository(apiService: ApiService): RepositoryCharacters {
+    return RepositoryCharacters(apiService)
 }
 
 

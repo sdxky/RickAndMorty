@@ -84,4 +84,6 @@ dependencies {
     implementation("androidx.paging:paging-runtime-ktx:3.3.2")
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
+
+    implementation(libs.koin.android)
 }
