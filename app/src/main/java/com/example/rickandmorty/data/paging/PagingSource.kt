@@ -12,7 +12,7 @@ class PagingSource(private val api: ApiService): PagingSource<Int, Character>() 
         return try {
             val currentPage = params.key ?: START_INDEX
             val previousKey = if (currentPage == START_INDEX) null else currentPage.minus(1)
-            val response = (api.getCharacters(currentPage).body()?.results) ?: emptyList()
+            val response = (api.getCharacters(currentPage).results)
             LoadResult.Page(
                 data = response,
                 prevKey = previousKey,

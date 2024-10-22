@@ -11,10 +11,10 @@ interface ApiService {
     @GET("character")
     suspend fun getCharacters(
         @Query("page") page: Int
-    ) : Response<BaseResponse>
+    ) : BaseResponse
 
     @GET("character/{id}")
     suspend fun getSingleCharacter(
         @Path("id") id: Int
-    ) : Response<DetailModel>
+    ) : DetailModel
 }

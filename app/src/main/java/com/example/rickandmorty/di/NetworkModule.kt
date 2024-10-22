@@ -1,4 +1,4 @@
-package com.example.rickandmorty.data.module
+package com.example.rickandmorty.di
 
 import com.example.rickandmorty.data.repository.RepositoryCharacters
 import com.example.rickandmorty.data.apiService.ApiService

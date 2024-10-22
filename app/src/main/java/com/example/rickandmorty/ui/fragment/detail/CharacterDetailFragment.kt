@@ -43,13 +43,15 @@ class CharacterDetailFragment : Fragment() {
                     headerImageView.load(resource.data.image)
 
                 }
-                is Resource.Error -> {
+                is Resource.Error<*> -> {
                     Log.e("TAG", "initListData: ${resource.message}", )
                     Toast.makeText(requireContext(), resource.message, Toast.LENGTH_SHORT).show()
                 }
-                is Resource.Loading -> {
+                is Resource.Loading<*> -> {
                     // Show loading state
                 }
+
+                else -> {}
             }
         }
     }

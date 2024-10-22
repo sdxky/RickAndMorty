@@ -35,23 +35,4 @@ class RepositoryCharacters (private val api: ApiService) {
             }
         }
     }
-
-
-    fun getCharacter(id: Int): LiveData<Resource<DetailModel>> {
-        return liveData(Dispatchers.IO) {
-            emit(Resource.Loading())
-            try {
-                val response = api.getSingleCharacter(id)
-                if (response.isSuccessful && response.body() != null) {
-                    emit(Resource.Success(response.body()!!))
-                } else {
-                    emit(Resource.Error("Error: ${response.message()}"))
-                }
-            } catch (e: Exception) {
-                emit(Resource.Error("Network error: ${e.message}"))
-            }
-        }
-    }
-
-
 }

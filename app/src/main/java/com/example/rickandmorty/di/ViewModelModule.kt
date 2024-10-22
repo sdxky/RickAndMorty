@@ -1,4 +1,4 @@
-package com.example.rickandmorty.data.module
+package com.example.rickandmorty.di
 
 import com.example.rickandmorty.ui.fragment.character.CharacterViewModel
 import com.example.rickandmorty.ui.fragment.detail.CharacterDetailViewModel
